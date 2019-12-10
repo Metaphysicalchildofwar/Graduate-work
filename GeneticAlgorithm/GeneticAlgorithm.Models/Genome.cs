@@ -11,6 +11,7 @@ namespace GeneticAlgorithm.Models
     /// </summary>
     public class Genome
     {
+        public Genome() { }
         public Genome(int length, bool createGenes)
         {
             Length = length;
@@ -21,6 +22,7 @@ namespace GeneticAlgorithm.Models
                 CreateGenes();
             }
         }
+
         /// <summary>
         /// Приспособленность
         /// </summary>
@@ -49,7 +51,7 @@ namespace GeneticAlgorithm.Models
         /// <summary>
         /// Рандомное создание генов
         /// </summary>
-        private void CreateGenes()
+        public void CreateGenes()
         {
             for (var l = 0; l < Length; l++)
             {
