@@ -93,7 +93,7 @@ namespace GeneticAlgorithm.Models
                 genome.Fitness = FitnessFunction(genome.Genes);
                 TotalFitness += genome.Fitness;
             }
-            //ThisGeneration.Sort(new GenomeComparer()); скоро будет создан
+            ThisGeneration.Sort(new GenomeComparison());
 
             double fitness = 0.0;
             FitnessTable.Clear();
