@@ -12,14 +12,14 @@ namespace GeneticAlgorithm.Models
     /// <summary>
 	/// Главный класс генетического алгоритма
 	/// </summary>
-    public class GeneticAlgorithm
+    public class Genetic_Algorithm
     {
-        event Message Notify;
+        public event Message Notify;
 
         /// <summary>
         /// Конструктор для инициализации
         /// </summary>
-        public GeneticAlgorithm(double crossoverRate, double mutationRate, int populationSize, int generationSize, int genomeSize)
+        public Genetic_Algorithm(double crossoverRate, double mutationRate, int populationSize, int generationSize, int genomeSize)
         {
             InitialValues();
             CrossoverRate = crossoverRate;

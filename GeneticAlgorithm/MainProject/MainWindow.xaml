@@ -5,8 +5,58 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MainProject"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
-    </Grid>
+        Title="MainWindow" Height="601.21" Width="852.016">
+    <Border BorderThickness="0">
+        <Grid Margin="13,9,13,8">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <Label Grid.Column="2" Grid.Row="0" Content="Скрещивание:"/>
+            <Label Grid.Column="2" Grid.Row="1" Content="Мутация:"/>
+            <Label Grid.Column="2" Grid.Row="2" Content="Размер популяции:"/>
+            <Label Grid.Column="2" Grid.Row="3" Content="Размер поколения:"/>
+            <Label Grid.Column="2" Grid.Row="4" Content="Размер генома:"/>
+
+            <TextBox Grid.Column="3" Grid.Row="0" Padding="3" Margin="4" />
+            <TextBox Grid.Column="3" Grid.Row="1" Padding="3" Margin="4" />
+            <TextBox Grid.Column="3" Grid.Row="2" Padding="3" Margin="4" />
+            <TextBox Grid.Column="3" Grid.Row="3" Padding="3" Margin="4" />
+            <TextBox Grid.Column="3" Grid.Row="4" Padding="3" Margin="4" />
+        </Grid>
+    </Border>
+    <Window.Resources>
+        <Style TargetType="Label" >
+            <Style.Setters>
+                <Setter Property="FontSize" Value="12" />
+                <Setter Property="HorizontalAlignment" Value="Right" />
+            </Style.Setters>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="true">
+                    <Setter Property="Background" Value="#fcdce8" />
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+        <Style TargetType="TextBox">
+            <Style.Setters>
+                <Setter Property="Background" Value="White" />
+
+            </Style.Setters>
+        </Style>
+        <Style TargetType="ScrollBar">
+            <Style.Setters>
+                <Setter Property="Background" Value="#d9f0fc" />
+            </Style.Setters>
+        </Style>
+    </Window.Resources>
 </Window>

@@ -1,0 +1,5 @@
+C:\Users\ewe98\OneDrive\Рабочий стол\Дипломная работа\Genetic Algorithm\Graduate-work\GeneticAlgorithm\Models\bin\Debug\Models.dll
+C:\Users\ewe98\OneDrive\Рабочий стол\Дипломная работа\Genetic Algorithm\Graduate-work\GeneticAlgorithm\Models\bin\Debug\Models.pdb
+C:\Users\ewe98\OneDrive\Рабочий стол\Дипломная работа\Genetic Algorithm\Graduate-work\GeneticAlgorithm\Models\obj\Debug\Models.dll
+C:\Users\ewe98\OneDrive\Рабочий стол\Дипломная работа\Genetic Algorithm\Graduate-work\GeneticAlgorithm\Models\obj\Debug\Models.pdb
+C:\Users\ewe98\OneDrive\Рабочий стол\Дипломная работа\Genetic Algorithm\Graduate-work\GeneticAlgorithm\Models\obj\Debug\Models.csprojAssemblyReference.cache
