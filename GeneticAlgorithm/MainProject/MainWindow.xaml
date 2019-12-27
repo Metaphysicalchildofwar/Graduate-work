@@ -5,34 +5,80 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MainProject"
         mc:Ignorable="d"
-        Title="MainWindow" Height="601.21" Width="852.016">
-    <Border BorderThickness="0">
-        <Grid Margin="13,9,13,8">
+        Title="Генетический алгоритм" Height="600" Width="1000" 
+        WindowStartupLocation="CenterScreen"
+        Background="#f6f7fb"
+        Icon="Images\Content\cpu.png"
+        ResizeMode="NoResize" >
+
+    <Border BorderThickness="0" >
+        <Grid Margin="1,18,-18,-8">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition></ColumnDefinition>
-                <ColumnDefinition></ColumnDefinition>
-                <ColumnDefinition></ColumnDefinition>
-                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition Width="434*" />
+                <ColumnDefinition Width="169*" />
+                <ColumnDefinition Width="101*" />
+                <ColumnDefinition Width="210*"/>
+                <ColumnDefinition Width="95*" />
             </Grid.ColumnDefinitions>
+
             <Grid.RowDefinitions>
-                <RowDefinition Height="auto"></RowDefinition>
-                <RowDefinition Height="auto"></RowDefinition>
-                <RowDefinition Height="auto"></RowDefinition>
-                <RowDefinition Height="auto"></RowDefinition>
-                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="31" />
+                <RowDefinition Height="31" />
+                <RowDefinition Height="31" />
+                <RowDefinition Height="31" />
+                <RowDefinition Height="31" />
+                <RowDefinition Height="31" />
+                <RowDefinition Height="31" />
+                <RowDefinition Height="31" />
+                <RowDefinition Height="31" />
+                <RowDefinition Height="31" />
+                <RowDefinition Height="31" />
+                <RowDefinition Height="31" />
+                <RowDefinition Height="31" />
+                <RowDefinition Height="31" />
+                <RowDefinition Height="31" />
+                <RowDefinition Height="31" />
+                <RowDefinition Height="31" />
             </Grid.RowDefinitions>
 
-            <Label Grid.Column="2" Grid.Row="0" Content="Скрещивание:"/>
-            <Label Grid.Column="2" Grid.Row="1" Content="Мутация:"/>
-            <Label Grid.Column="2" Grid.Row="2" Content="Размер популяции:"/>
-            <Label Grid.Column="2" Grid.Row="3" Content="Размер поколения:"/>
-            <Label Grid.Column="2" Grid.Row="4" Content="Размер генома:"/>
+            <Label Grid.Column="3" Grid.Row="0" Content="Скрещивание:" Width="89" Margin="0,4,0,0"/>
+            <Label Grid.Column="3" Grid.Row="1" Content="Мутация:" Width="60" Margin="0,4,0,0"/>
+            <Label Grid.Column="3" Grid.Row="2" Content="Размер популяции:" Width="116" Margin="0,4,0,0"/>
+            <Label Grid.Column="3" Grid.Row="3" Content="Размер поколения:" Width="115" Margin="0,5,0,0"/>
+            <Label Grid.Column="3" Grid.Row="4" Content="Размер генома:" Width="95" Margin="0,4,0,0"/>
+            <Label Grid.Column="3" Grid.Row="5" Content="Значения приспособленности:" HorizontalAlignment="Left"
+                   HorizontalContentAlignment="Left" Width="179" Margin="0,13,0,19" Grid.RowSpan="2" />
+            <Label Grid.Row="13" Grid.Column="1" Content="Максимальное значение:" HorizontalAlignment="Right" Width="150" />
+            <Label Grid.Row="14" Grid.Column="1" Content="Координата х:" HorizontalAlignment="Right" Width="87" />
+            <Label Grid.Row="15" Grid.Column="1" Content="Координата y:" HorizontalAlignment="Right" Width="87" />
+            <Label Grid.Column="1" Grid.Row="0" Grid.ColumnSpan="2" Content="Выберите функцию для исследования:" Margin="0,4,30,0"/>
+            
+            <TextBox Text="{Binding #}" Grid.Column="4" Grid.Row="0" Padding="3" Margin="4,4,0,4" Width="61" />
+            <TextBox Text="{Binding #}" Grid.Column="4" Grid.Row="1" Padding="3" Margin="4,4,0,4" />
+            <TextBox Text="{Binding #}" Grid.Column="4" Grid.Row="1" Padding="3" Margin="4,4,0,4" Width="61" />
+            <TextBox Text="{Binding #}" Grid.Column="4" Grid.Row="2" Padding="3" Margin="4,4,0,4" Width="61" />
+            <TextBox Text="{Binding #}" Grid.Column="4" Grid.Row="3" Padding="3" Margin="4,4,0,4" Width="61" />
+            <TextBox Text="{Binding #}" Grid.Column="4" Grid.Row="4" Padding="3" Margin="4,4,0,4" Width="61" />
+            <TextBox Text="{Binding #}" Grid.Column="3" Grid.Row="6" Padding="2" Margin="0,10,30,-3" 
+                     Grid.ColumnSpan="2" Grid.RowSpan="11"  Width="Auto" HorizontalAlignment="Stretch"
+                     MaxLength="0" VerticalScrollBarVisibility="Auto" IsReadOnly="True" />
+            <TextBox Text="{Binding #}" Grid.Column="2" Grid.Row="13" Padding="3" Margin="4,4,0,4" Width="85" 
+                     HorizontalAlignment="Left" MaxLength="0" IsReadOnly="True" />
+            <TextBox Text="{Binding #}" Grid.Column="2" Grid.Row="14" Padding="3" Margin="4,4,0,4" Width="85"
+                     HorizontalAlignment="Left" MaxLength="0" IsReadOnly="True" />
+            <TextBox Text="{Binding #}" Grid.Column="2" Grid.Row="15" Padding="3" Margin="4,4,0,4" Width="85" 
+                     HorizontalAlignment="Left" MaxLength="0" IsReadOnly="True" />
 
-            <TextBox Grid.Column="3" Grid.Row="0" Padding="3" Margin="4" />
-            <TextBox Grid.Column="3" Grid.Row="1" Padding="3" Margin="4" />
-            <TextBox Grid.Column="3" Grid.Row="2" Padding="3" Margin="4" />
-            <TextBox Grid.Column="3" Grid.Row="3" Padding="3" Margin="4" />
-            <TextBox Grid.Column="3" Grid.Row="4" Padding="3" Margin="4" />
+            <Line X1="424" Y1="0" X2="424" Y2="600" Stroke="#e3e4e8" StrokeThickness="1"  Grid.RowSpan="17" />
+
+            <ComboBox Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="2" Margin="4,4,0,4" HorizontalAlignment="Center" Width="240" Style="{DynamicResource ComboBoxStyle}">
+                <TextBlock>1</TextBlock>
+                <TextBlock>2</TextBlock>
+                <TextBlock>3</TextBlock>
+                <TextBlock>4</TextBlock>
+
+                
+            </ComboBox>
         </Grid>
     </Border>
     <Window.Resources>
@@ -40,22 +86,34 @@
             <Style.Setters>
                 <Setter Property="FontSize" Value="12" />
                 <Setter Property="HorizontalAlignment" Value="Right" />
+                <Setter Property="FontFamily" Value="Segoe UI" />
             </Style.Setters>
             <Style.Triggers>
                 <Trigger Property="IsMouseOver" Value="true">
-                    <Setter Property="Background" Value="#fcdce8" />
+
                 </Trigger>
             </Style.Triggers>
         </Style>
         <Style TargetType="TextBox">
             <Style.Setters>
-                <Setter Property="Background" Value="White" />
-
+                <Setter Property="Background" Value="#fafbff" />
+                <Setter Property="Width" Value="60" />
+                <Setter Property="HorizontalAlignment" Value="Left" />
+                <Setter Property="TextAlignment" Value="Center" />
+                <Setter Property="VerticalScrollBarVisibility" Value="Disabled" />
+                <Setter Property="TextWrapping" Value="Wrap" />
+                <Setter Property="MaxLength" Value="5" />
+                <Setter Property="BorderThickness" Value="0.6" />
             </Style.Setters>
         </Style>
         <Style TargetType="ScrollBar">
             <Style.Setters>
                 <Setter Property="Background" Value="#d9f0fc" />
+            </Style.Setters>
+        </Style>
+        <Style TargetType="ComboBoxItem">
+            <Style.Setters>
+                <Setter Property="Background" Value="#fafbff" />
             </Style.Setters>
         </Style>
     </Window.Resources>

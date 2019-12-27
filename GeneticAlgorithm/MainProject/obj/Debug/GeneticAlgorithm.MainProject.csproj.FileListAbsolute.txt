@@ -12,3 +12,7 @@ C:\Users\ewe98\OneDrive\Рабочий стол\Дипломная работа\
 C:\Users\ewe98\OneDrive\Рабочий стол\Дипломная работа\Genetic Algorithm\Graduate-work\GeneticAlgorithm\MainProject\obj\Debug\MainProject.exe
 C:\Users\ewe98\OneDrive\Рабочий стол\Дипломная работа\Genetic Algorithm\Graduate-work\GeneticAlgorithm\MainProject\obj\Debug\MainProject.pdb
 C:\Users\ewe98\OneDrive\Рабочий стол\Дипломная работа\Genetic Algorithm\Graduate-work\GeneticAlgorithm\MainProject\obj\Debug\GeneticAlgorithm.MainProject.csprojAssemblyReference.cache
+C:\Users\ewe98\OneDrive\Рабочий стол\Дипломная работа\Genetic Algorithm\Graduate-work\GeneticAlgorithm\MainProject\obj\Debug\App.baml
+C:\Users\ewe98\OneDrive\Рабочий стол\Дипломная работа\Genetic Algorithm\Graduate-work\GeneticAlgorithm\MainProject\bin\Debug\System.ValueTuple.dll
+C:\Users\ewe98\OneDrive\Рабочий стол\Дипломная работа\Genetic Algorithm\Graduate-work\GeneticAlgorithm\MainProject\bin\Debug\System.ValueTuple.xml
+C:\Users\ewe98\OneDrive\Рабочий стол\Дипломная работа\Genetic Algorithm\Graduate-work\GeneticAlgorithm\MainProject\obj\Debug\GeneticAlgorithm.MainProject.csproj.CopyComplete
