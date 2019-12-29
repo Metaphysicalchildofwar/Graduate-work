@@ -35,7 +35,7 @@ namespace GeneticAlgorithm.Models
         public double Fitness { get; set; }
 
         /// <summary>
-        /// Процент мутации
+        /// Частота мутации
         /// </summary>
         public static double MutationRate { get; set; }
 

@@ -10,7 +10,7 @@ namespace GeneticAlgorithm.ConsoleVersion
     {
         static void Main()
         {
-            Genetic_Algorithm ga = new Genetic_Algorithm(0.8, 0.05, 300, 1000, 2);
+            Genetic_Algorithm ga = new Genetic_Algorithm(0.8, 0.05, 300, 1000);
             ga.Notify += ((a) => Console.WriteLine(a));
             ga.FitnessFunction = new GAFunction(theActualFunction);
             ga.Elitism = true;

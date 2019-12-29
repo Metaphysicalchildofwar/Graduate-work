@@ -19,14 +19,14 @@ namespace GeneticAlgorithm.Models
         /// <summary>
         /// Конструктор для инициализации
         /// </summary>
-        public Genetic_Algorithm(double crossoverRate, double mutationRate, int populationSize, int generationSize, int genomeSize)
+        public Genetic_Algorithm(double crossoverRate, double mutationRate, int populationSize, int generationSize)
         {
             InitialValues();
             CrossoverRate = crossoverRate;
             MutationRate = mutationRate;
             PopulationSize = populationSize;
             GenerationSize = generationSize;
-            GenomeSize = genomeSize;
+            GenomeSize = 2;
             FitnessFile = string.Empty;
         }
 
@@ -46,12 +46,12 @@ namespace GeneticAlgorithm.Models
         public int GenomeSize { get; set; }
 
         /// <summary>
-        /// Процент скрещиваний
+        /// Частота скрещиваний
         /// </summary>
         public double CrossoverRate { get; set; }
 
         /// <summary>
-        /// Процент мутации
+        /// Частота мутации
         /// </summary>
         public double MutationRate { get; set; }
 

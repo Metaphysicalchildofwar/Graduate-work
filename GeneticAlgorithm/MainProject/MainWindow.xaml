@@ -41,32 +41,31 @@
                 <RowDefinition Height="31" />
             </Grid.RowDefinitions>
 
-            <Label Grid.Column="3" Grid.Row="0" Content="Скрещивание:" Width="89" Margin="0,4,0,0"/>
-            <Label Grid.Column="3" Grid.Row="1" Content="Мутация:" Width="60" Margin="0,4,0,0"/>
-            <Label Grid.Column="3" Grid.Row="2" Content="Размер популяции:" Width="116" Margin="0,4,0,0"/>
-            <Label Grid.Column="3" Grid.Row="3" Content="Размер поколения:" Width="115" Margin="0,5,0,0"/>
-            <Label Grid.Column="3" Grid.Row="4" Content="Размер генома:" Width="95" Margin="0,4,0,0"/>
+            <Label Grid.Column="3" Grid.Row="0" Content="Частота крещиваний:" Margin="0,4,0,0"/>
+            <Label Grid.Column="3" Grid.Row="1" Content="Частота мутаций:" Margin="0,4,0,0"/>
+            <Label Grid.Column="3" Grid.Row="2" Content="Размер популяции:" Margin="0,4,0,0"/>
+            <Label Grid.Column="3" Grid.Row="3" Content="Размер поколения:" Margin="0,5,0,0"/>
             <Label Grid.Column="3" Grid.Row="5" Content="Значения приспособленности:" HorizontalAlignment="Left"
-                   HorizontalContentAlignment="Left" Width="179" Margin="0,13,0,19" Grid.RowSpan="2" />
-            <Label Grid.Row="13" Grid.Column="1" Content="Максимальное значение:" HorizontalAlignment="Right" Width="150" />
-            <Label Grid.Row="14" Grid.Column="1" Content="Координата х:" HorizontalAlignment="Right" Width="87" />
-            <Label Grid.Row="15" Grid.Column="1" Content="Координата y:" HorizontalAlignment="Right" Width="87" />
+                   HorizontalContentAlignment="Left" Margin="0,13,0,19" Grid.RowSpan="2" />
+            <Label Grid.Row="12" Grid.Column="1" Content="Максимальное значение:" HorizontalAlignment="Right" />
+            <Label Grid.Row="13" Grid.Column="1" Content="Координата х:" HorizontalAlignment="Right" />
+            <Label Grid.Row="14" Grid.Column="1" Content="Координата y:" HorizontalAlignment="Right" />
             <Label Grid.Column="1" Grid.Row="0" Grid.ColumnSpan="2" Content="Выберите функцию для исследования:" Margin="0,4,30,0"/>
+
+
             
-            <TextBox Text="{Binding #}" Grid.Column="4" Grid.Row="0" Padding="3" Margin="4,4,0,4" Width="61" />
-            <TextBox Text="{Binding #}" Grid.Column="4" Grid.Row="1" Padding="3" Margin="4,4,0,4" />
-            <TextBox Text="{Binding #}" Grid.Column="4" Grid.Row="1" Padding="3" Margin="4,4,0,4" Width="61" />
-            <TextBox Text="{Binding #}" Grid.Column="4" Grid.Row="2" Padding="3" Margin="4,4,0,4" Width="61" />
-            <TextBox Text="{Binding #}" Grid.Column="4" Grid.Row="3" Padding="3" Margin="4,4,0,4" Width="61" />
-            <TextBox Text="{Binding #}" Grid.Column="4" Grid.Row="4" Padding="3" Margin="4,4,0,4" Width="61" />
-            <TextBox Text="{Binding #}" Grid.Column="3" Grid.Row="6" Padding="2" Margin="0,10,30,-3" 
+            <TextBox Text="{Binding Properties.CrossoverRate}"  Grid.Column="4" Grid.Row="0" Padding="3" Margin="4,4,0,4" Width="61" />
+            <TextBox Text="{Binding Properties.MutationRate}" Grid.Column="4" Grid.Row="1" Padding="3" Margin="4,4,0,4" />
+            <TextBox Text="{Binding Properties.PopulationSize}" Grid.Column="4" Grid.Row="2" Padding="3" Margin="4,4,0,4" Width="61" />
+            <TextBox Text="{Binding Properties.GenerationSize}" Grid.Column="4" Grid.Row="3" Padding="3" Margin="4,4,0,4" Width="61" />
+            <TextBox Text="{Binding #,  Mode=TwoWay}" Grid.Column="3" Grid.Row="6" Padding="2" Margin="0,10,30,-3" 
                      Grid.ColumnSpan="2" Grid.RowSpan="11"  Width="Auto" HorizontalAlignment="Stretch"
                      MaxLength="0" VerticalScrollBarVisibility="Auto" IsReadOnly="True" />
-            <TextBox Text="{Binding #}" Grid.Column="2" Grid.Row="13" Padding="3" Margin="4,4,0,4" Width="85" 
+            <TextBox Text="{Binding Properties.BestFitness, Mode=TwoWay}" Grid.Column="2" Grid.Row="12" Padding="3" Margin="4,4,0,4" Width="85" 
                      HorizontalAlignment="Left" MaxLength="0" IsReadOnly="True" />
-            <TextBox Text="{Binding #}" Grid.Column="2" Grid.Row="14" Padding="3" Margin="4,4,0,4" Width="85"
+            <TextBox Text="{Binding Properties.BestX,  Mode=TwoWay}" Grid.Column="2" Grid.Row="13" Padding="3" Margin="4,4,0,4" Width="85"
                      HorizontalAlignment="Left" MaxLength="0" IsReadOnly="True" />
-            <TextBox Text="{Binding #}" Grid.Column="2" Grid.Row="15" Padding="3" Margin="4,4,0,4" Width="85" 
+            <TextBox Text="{Binding Properties.BestY,  Mode=TwoWay}" Grid.Column="2" Grid.Row="14" Padding="3" Margin="4,4,0,4" Width="85" 
                      HorizontalAlignment="Left" MaxLength="0" IsReadOnly="True" />
 
             <Line X1="424" Y1="0" X2="424" Y2="600" Stroke="#e3e4e8" StrokeThickness="1"  Grid.RowSpan="17" />
@@ -76,9 +75,9 @@
                 <TextBlock>2</TextBlock>
                 <TextBlock>3</TextBlock>
                 <TextBlock>4</TextBlock>
-
-                
             </ComboBox>
+
+            <Button Command="{Binding WorkGeneticAlgorithm}" Grid.Column="1" Grid.Row="16" Grid.ColumnSpan="2" Content="Начать работу алгоритма" />
         </Grid>
     </Border>
     <Window.Resources>
@@ -114,6 +113,14 @@
         <Style TargetType="ComboBoxItem">
             <Style.Setters>
                 <Setter Property="Background" Value="#fafbff" />
+            </Style.Setters>
+        </Style>
+        <Style TargetType="Button">
+            <Style.Setters>
+                <Setter Property="Width" Value="150" />
+                <Setter Property="Height" Value="24" />
+                <Setter Property="Background" Value="#fafbff" />
+                <Setter Property="BorderThickness" Value="0.6" />
             </Style.Setters>
         </Style>
     </Window.Resources>
