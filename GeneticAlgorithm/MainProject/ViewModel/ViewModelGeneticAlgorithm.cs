@@ -12,6 +12,23 @@ namespace MainProject.ViewModel
 {
     class ViewModelGeneticAlgorithm : INotifyPropertyChanged
     {
+
+        public ViewModelGeneticAlgorithm()
+        {
+            Properties.PopulationSize = SaveState.Default.PopulationSize;
+            Properties.MutationRate = SaveState.Default.MutationRate;
+            Properties.CrossoverRate = SaveState.Default.CrossoverRate;
+            Properties.GenerationSize = SaveState.Default.GenerationSize;
+        }
+        ~ViewModelGeneticAlgorithm()
+        {
+            SaveState.Default.PopulationSize = Properties.PopulationSize;
+            SaveState.Default.MutationRate = Properties.MutationRate;
+            SaveState.Default.CrossoverRate = Properties.CrossoverRate;
+            SaveState.Default.GenerationSize = Properties.GenerationSize;
+            SaveState.Default.Save();
+        }
+
         public event PropertyChangedEventHandler PropertyChanged;
         private void InvokePropertyChanged(string v)
         {
@@ -67,7 +84,7 @@ namespace MainProject.ViewModel
 
                    Properties.BestFitness += fitness.ToString();
                    Properties.BestX += values[0].ToString();
-                   Properties.BestY += values[1].ToString();
+                   Properties.BestY += values[1].ToString(); 
                }
            }
            ));

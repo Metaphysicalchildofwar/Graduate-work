@@ -238,7 +238,7 @@ namespace GeneticAlgorithm.Models
             {
                 CreateNextGeneration();
                 RankPopulation();
-                Notify?.Invoke($"{(ThisGeneration[PopulationSize - 1].Fitness)}, {g}");
+                Notify?.Invoke($"{(ThisGeneration[PopulationSize - 1].Fitness)}, {g+1}");
             }
         }
 

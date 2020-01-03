@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 
 namespace MainProject.PropertyModel
 {
+    /// <summary>
+    /// Класс для свойств
+    /// </summary>
     class Properties : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
