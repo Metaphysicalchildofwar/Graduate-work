@@ -54,8 +54,9 @@ namespace MainProject.ViewModel
                    Properties.BestFitness = string.Empty;
                    Properties.BestX = string.Empty;
                    Properties.BestY = string.Empty;
+                   Properties.IntermediateValues = string.Empty;
 
-                   //ga.Notify += ((a) => Console.WriteLine(a));
+                   ga.Notify += ((a) => Properties.IntermediateValues += a + '\n');
                    ga.FitnessFunction = new GAFunction(theActualFunction);
                    ga.Elitism = true;
                    await Task.Run(() => ga.WorkGeneticAlgorithm());

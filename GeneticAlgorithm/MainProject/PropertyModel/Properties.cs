@@ -25,6 +25,24 @@ namespace MainProject.PropertyModel
         private string _bestX;
         private string _bestY;
 
+        private string _intermediateValues;
+
+        /// <summary>
+        /// Вывод в TextBox промежуточный фитнесс значений
+        /// </summary>
+        public string IntermediateValues
+        {
+            get => _intermediateValues;
+            set
+            {
+                if (_intermediateValues != value)
+                {
+                    _intermediateValues = value;
+                    InvokePropertyChanged(nameof(IntermediateValues));
+                }
+            }
+        }
+
         /// <summary>
         /// Вывод в TextBox лучшего x
         /// </summary>
