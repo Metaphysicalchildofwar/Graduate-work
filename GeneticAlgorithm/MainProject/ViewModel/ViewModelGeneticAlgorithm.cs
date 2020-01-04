@@ -3,6 +3,7 @@ using MainProject.Commands;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -36,11 +37,10 @@ namespace MainProject.ViewModel
         }
         Command _work;
         public static PropertyModel.Properties Properties { get; set; } = new PropertyModel.Properties();
-
         Genetic_Algorithm ga;
 
         //временно тут
-        public static double theActualFunction(double[] values)
+        public static double TheActualFunction(double[] values)
         {
             double x = values[0];
             double y = values[1];
@@ -56,37 +56,42 @@ namespace MainProject.ViewModel
            {
                double doubleRes;
                int intRes;
-
-               if (!(double.TryParse(Properties.CrossoverRate, out doubleRes)) || !(double.TryParse(Properties.MutationRate, out doubleRes)) ||
+               NumberStyles style = NumberStyles.Float;
+               if (!(double.TryParse(Properties.CrossoverRate.Replace(
+                                    (CultureInfo.InvariantCulture.NumberFormat.NumberDecimalSeparator == ",") ? "," : ".",
+                                    (CultureInfo.InvariantCulture.NumberFormat.NumberDecimalSeparator == ",") ? "." : ","), out doubleRes)) || 
+                   !(double.TryParse(Properties.MutationRate.Replace(
+                                    (CultureInfo.InvariantCulture.NumberFormat.NumberDecimalSeparator == ",") ? "," : ".",
+                                    (CultureInfo.InvariantCulture.NumberFormat.NumberDecimalSeparator == ",") ? "." : ","), out doubleRes)) ||
                    !(int.TryParse(Properties.PopulationSize, out intRes)) || !(int.TryParse(Properties.GenerationSize, out intRes)))
                {
                    MessageBox.Show("Данные введены некорректно.\nПроверьте правильность заполнения");
                }
-               else 
+               else
                {
-                   ga = new Genetic_Algorithm(Double.Parse(Properties.CrossoverRate), Double.Parse(Properties.MutationRate),
-                                              Int32.Parse(Properties.PopulationSize), Int32.Parse(Properties.GenerationSize));
+                   ga = new Genetic_Algorithm(Double.Parse(Properties.CrossoverRate, CultureInfo.InvariantCulture), Double.Parse(Properties.MutationRate, CultureInfo.InvariantCulture),
+                                                  Int32.Parse(Properties.PopulationSize), Int32.Parse(Properties.GenerationSize));
 
-                   //отчистка полей для вывода результатов
-                   Properties.BestFitness = string.Empty;
-                   Properties.BestX = string.Empty;
-                   Properties.BestY = string.Empty;
-                   Properties.IntermediateValues = string.Empty;
+                       //отчистка полей для вывода результатов
+                       Properties.BestFitness = string.Empty;
+                       Properties.BestX = string.Empty;
+                       Properties.BestY = string.Empty;
+                       Properties.IntermediateValues = string.Empty;
 
-                   ga.Notify += ((a) => Properties.IntermediateValues += a + '\n');
-                   ga.FitnessFunction = new GAFunction(theActualFunction);
-                   ga.Elitism = true;
-                   await Task.Run(() => ga.WorkGeneticAlgorithm());
-                   double[] values;
-                   double fitness;
+                       ga.Notify += ((a) => Properties.IntermediateValues += a + '\n');
+                       ga.FitnessFunction = new GAFunction(TheActualFunction);
+                       ga.Elitism = true;
+                       await Task.Run(() => ga.WorkGeneticAlgorithm());
+                       double[] values;
+                       double fitness;
 
-                   ga.GetBest(out values, out fitness);
+                       ga.GetBest(out values, out fitness);
 
-                   Properties.BestFitness += fitness.ToString();
-                   Properties.BestX += values[0].ToString();
-                   Properties.BestY += values[1].ToString(); 
+                       Properties.BestFitness += fitness.ToString();
+                       Properties.BestX += values[0].ToString();
+                       Properties.BestY += values[1].ToString();
+                   }
                }
-           }
            ));
 
     }

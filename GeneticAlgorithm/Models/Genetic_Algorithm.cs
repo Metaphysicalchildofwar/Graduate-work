@@ -15,7 +15,7 @@ namespace GeneticAlgorithm.Models
     public class Genetic_Algorithm
     {
         public event Message Notify;
-
+        const int _genomeSize = 2;
         /// <summary>
         /// Конструктор для инициализации
         /// </summary>
@@ -26,7 +26,7 @@ namespace GeneticAlgorithm.Models
             MutationRate = mutationRate;
             PopulationSize = populationSize;
             GenerationSize = generationSize;
-            GenomeSize = 2;
+            GenomeSize = _genomeSize;
             FitnessFile = string.Empty;
         }
 
@@ -238,7 +238,7 @@ namespace GeneticAlgorithm.Models
             {
                 CreateNextGeneration();
                 RankPopulation();
-                Notify?.Invoke($"{(ThisGeneration[PopulationSize - 1].Fitness)}, {g+1}");
+                Notify?.Invoke($"{(ThisGeneration[PopulationSize - 1].Fitness)}     {g+1}");
             }
         }
 
