@@ -30,6 +30,24 @@ namespace MainProject.PropertyModel
 
         private string _intermediateValues;
 
+        private int _theActualFunction;
+
+        /// <summary>
+        /// Номер функции для исследования
+        /// </summary>
+        public int TheActualFunction
+        {
+            get => _theActualFunction;
+            set
+            {
+                if (_theActualFunction != value)
+                {
+                    _theActualFunction = value;
+                    InvokePropertyChanged(nameof(TheActualFunction));
+                }
+            }
+        }
+
         /// <summary>
         /// Вывод в TextBox промежуточный фитнесс значений
         /// </summary>

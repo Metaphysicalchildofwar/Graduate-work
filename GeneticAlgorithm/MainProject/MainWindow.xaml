@@ -70,11 +70,9 @@
 
             <Line X1="430" Y1="0" X2="430" Y2="600" Stroke="#e3e4e8" StrokeThickness="1"  Grid.RowSpan="17" />
 
-            <ComboBox Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="2" Margin="39,4,33,4" HorizontalAlignment="Center" Width="229" Style="{DynamicResource ComboBoxStyle}">
-                <TextBlock>1</TextBlock>
-                <TextBlock>2</TextBlock>
-                <TextBlock>3</TextBlock>
-                <TextBlock>4</TextBlock>
+            <ComboBox SelectedIndex="{Binding Properties.TheActualFunction}" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="2" Margin="39,4,33,4" HorizontalAlignment="Center" Width="229" Style="{DynamicResource ComboBoxStyle}">
+                <ComboBoxItem Content="0" />
+                <ComboBoxItem Content="1" />
             </ComboBox>
 
             <Button Command="{Binding WorkGeneticAlgorithm}" Grid.Column="1" Grid.Row="16" Grid.ColumnSpan="2" Content="Начать работу алгоритма" Height="Auto" Margin="62,4" Width="Auto" />
