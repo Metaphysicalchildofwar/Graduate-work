@@ -24,3 +24,4 @@ C:\Users\ewe98\OneDrive\Рабочий стол\Дипломная работа\
 C:\Users\ewe98\OneDrive\Рабочий стол\Дипломная работа\Genetic Algorithm\Graduate-work\GeneticAlgorithm\MainProject\bin\Debug\OxyPlot.Wpf.xml
 C:\Users\ewe98\OneDrive\Рабочий стол\Дипломная работа\Genetic Algorithm\Graduate-work\GeneticAlgorithm\MainProject\bin\Debug\Newtonsoft.Json.dll
 C:\Users\ewe98\OneDrive\Рабочий стол\Дипломная работа\Genetic Algorithm\Graduate-work\GeneticAlgorithm\MainProject\bin\Debug\Newtonsoft.Json.xml
+C:\Users\ewe98\OneDrive\Рабочий стол\Дипломная работа\Genetic Algorithm\Graduate-work\GeneticAlgorithm\MainProject\bin\Debug\Models.dll.config

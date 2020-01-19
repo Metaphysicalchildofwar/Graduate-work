@@ -8,12 +8,12 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace MainProject {
+namespace Models {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "16.4.0.0")]
-    internal sealed partial class SaveState : global::System.Configuration.ApplicationSettingsBase {
+    public sealed partial class SaveState : global::System.Configuration.ApplicationSettingsBase {
         
         private static SaveState defaultInstance = ((SaveState)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new SaveState())));
         
@@ -44,6 +44,42 @@ namespace MainProject {
             }
             set {
                 this["GenerationSize"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0.08")]
+        public double MutationRate {
+            get {
+                return ((double)(this["MutationRate"]));
+            }
+            set {
+                this["MutationRate"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0.8")]
+        public double CrossoverRate {
+            get {
+                return ((double)(this["CrossoverRate"]));
+            }
+            set {
+                this["CrossoverRate"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("2")]
+        public int GenomeSize {
+            get {
+                return ((int)(this["GenomeSize"]));
+            }
+            set {
+                this["GenomeSize"] = value;
             }
         }
     }

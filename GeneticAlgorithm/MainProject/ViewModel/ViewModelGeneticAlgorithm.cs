@@ -1,6 +1,7 @@
 ﻿using GeneticAlgorithm.Models;
 using MainProject.Commands;
 using MainProject.WorkModels;
+using Models;
 using OxyPlot;
 using System;
 using System.Collections.Generic;
@@ -52,7 +53,6 @@ namespace MainProject.ViewModel
                     Properties.Availability = false;
                 }
 
-                double doubleRes;
                 int intRes;
                 function = new ChoiseFunction();
                 if (!(int.TryParse(Properties.PopulationSize, out intRes)) || !(int.TryParse(Properties.GenerationSize, out intRes)))

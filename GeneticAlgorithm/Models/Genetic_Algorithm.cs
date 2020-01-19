@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using Models;
 using OxyPlot;
 
 namespace GeneticAlgorithm.Models
@@ -15,21 +16,17 @@ namespace GeneticAlgorithm.Models
     {
         public event Message Notify;
 
-        const int _genomeSize = 2;
-        const double _mutationRate = 0.08;
-        const double _crossoverRate = 0.8;
-
         /// <summary>
         /// Конструктор для инициализации
         /// </summary>
         public Genetic_Algorithm(int populationSize, int generationSize)
         {
             InitialValues();
-            CrossoverRate = _crossoverRate;
-            MutationRate = _mutationRate;
+            CrossoverRate = SaveState.Default.CrossoverRate;
+            MutationRate = SaveState.Default.MutationRate;
             PopulationSize = populationSize;
             GenerationSize = generationSize;
-            GenomeSize = _genomeSize;
+            GenomeSize = SaveState.Default.GenomeSize;
             FitnessFile = string.Empty;
         }
 

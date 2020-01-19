@@ -26,7 +26,7 @@ namespace MainProject.WorkModels
                 case 0: f = -(Math.Pow(x, 2.0) + Math.Pow(y, 2.0) - 4.0); break;
                 case 1: f = -(Math.Pow((x-3.0), 2.0) + Math.Pow((y - 1.0), 2.0) - 6.0); break;
                 case 2: f = Math.Pow(Math.E, -(Math.Pow(x, 2.0) + Math.Pow(y, 2.0))) + 2 * Math.Pow(Math.E, -(Math.Pow((x - 2.0), 2.0) + Math.Pow((y - 2.0), 2.0))); break;
-                case 3: f = Math.Pow(Math.E, -(Math.Pow(x, 2.0) + Math.Pow(y, 2.0))) + 2 * Math.Pow(Math.E, -(Math.Pow((x - 2.0), 2.0) + Math.Pow((y - 2.0), 2.0))) + 3 * Math.Pow(Math.E, -(Math.Pow((x + 2), 2.0) + Math.Pow((y - 2), 2.0))); break;
+                case 3: f = Math.Pow(Math.E, -(Math.Pow(x, 2.0) + Math.Pow(y, 2.0))) + 2 * Math.Pow(Math.E, -(Math.Pow((x - 2.0), 2.0) + Math.Pow((y - 2.0), 2.0))) + 6 * Math.Pow(Math.E, -(Math.Pow((x + 2), 2.0) + Math.Pow((y - 2), 2.0))); break;
             }
             return f;
         }
