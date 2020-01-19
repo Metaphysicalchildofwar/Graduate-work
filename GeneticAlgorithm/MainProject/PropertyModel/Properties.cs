@@ -20,8 +20,6 @@ namespace MainProject.PropertyModel
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(v));
         }
         
-        private string _crossoverRate;
-        private string _mutationRate;
         private string _populationSize;
         private string _generationSize;
         private string _genomeSize;
@@ -181,38 +179,6 @@ namespace MainProject.PropertyModel
                 {
                     _bestFitness = value;
                     InvokePropertyChanged(nameof(BestFitness));
-                }
-            }
-        }
-
-        /// <summary>
-        /// Свойство для изменения TextBox'а частоты скрещиваний
-        /// </summary>
-        public string CrossoverRate
-        {
-            get => _crossoverRate;
-            set
-            {
-                if(_crossoverRate != value)
-                {
-                    _crossoverRate = value;
-                    InvokePropertyChanged(nameof(CrossoverRate));
-                }
-            }
-        }
-
-        /// <summary>
-        /// Свойство для изменения TextBox'а частоты мутаций
-        /// </summary>
-        public string MutationRate
-        {
-            get => _mutationRate;
-            set
-            {
-                if (_mutationRate != value)
-                {
-                    _mutationRate = value;
-                    InvokePropertyChanged(nameof(MutationRate));
                 }
             }
         }

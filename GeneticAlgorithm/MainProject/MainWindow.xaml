@@ -41,24 +41,16 @@
                 <RowDefinition Height="31" />
                 <RowDefinition Height="31" />
             </Grid.RowDefinitions>
-
-            <Label Grid.Column="0" Grid.Row="2" HorizontalAlignment="Center" Content="Частота крещиваний:" Margin="88,4,74,0" Width="128"/>
-            <Label Grid.Column="0" Grid.Row="3" HorizontalAlignment="Center" Content="Частота мутаций:" Margin="112,4,74,0" Width="104"/>
-            <Label Grid.Column="0" Grid.Row="4" HorizontalAlignment="Center" Content="Размер популяции:" Margin="100,4,74,0" Width="116"/>
-            <Label Grid.Column="0" Grid.Row="5" HorizontalAlignment="Center" Content="Размер поколения:" Margin="102,5,74,0" Width="114"/>
+            <Label Grid.Column="0" Grid.Row="2" HorizontalAlignment="Center" Content="Размер популяции:" Margin="100,4,74,0" Width="116"/>
+            <Label Grid.Column="0" Grid.Row="3" HorizontalAlignment="Center" Content="Размер поколения:" Margin="102,5,74,0" Width="114"/>
             <Label Grid.Column="1" Grid.Row="3" Content="Значения приспособленности:" HorizontalAlignment="Center"
                    HorizontalContentAlignment="Left" Margin="50,10,54,22" Grid.RowSpan="2" Width="180" />
             <Label Grid.Row="0" Grid.Column="1" Content="Максимальное значение:" Width="150" Margin="0,0,102,0" />
             <Label Grid.Row="1" Grid.Column="1" Content="Координата х:" HorizontalAlignment="Right" Width="88" Margin="0,0,100,0" />
             <Label Grid.Row="2" Grid.Column="1" Content="Координата y:" HorizontalAlignment="Center" Width="88" Margin="96,0,100,0" />
             <Label Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="1" Content="Выберите функцию для исследования:" Margin="0,4,30,0" Width="223"/>
-
-
-
-            <TextBox Text="{Binding Properties.CrossoverRate}" HorizontalAlignment="Right" Grid.Column="0" Grid.Row="2" Padding="3" Margin="0,4" Width="61" />
-            <TextBox Text="{Binding Properties.MutationRate}" HorizontalAlignment="Right" Grid.Column="0" Grid.Row="3" Padding="3" Margin="0,4" />
-            <TextBox Text="{Binding Properties.PopulationSize}" HorizontalAlignment="Right" Grid.Column="0" Grid.Row="4" Padding="3" Margin="0,4" Width="61" />
-            <TextBox Text="{Binding Properties.GenerationSize}" HorizontalAlignment="Right" Grid.Column="0" Grid.Row="5" Padding="3" Margin="0,4" Width="61" />
+            <TextBox Text="{Binding Properties.PopulationSize}" HorizontalAlignment="Right" Grid.Column="0" Grid.Row="2" Padding="3" Margin="0,4" Width="61" />
+            <TextBox Text="{Binding Properties.GenerationSize}" HorizontalAlignment="Right" Grid.Column="0" Grid.Row="3" Padding="3" Margin="0,4" Width="61" />
             <TextBox Text="{Binding Properties.IntermediateValues,  Mode=TwoWay}" Grid.Column="1" Grid.Row="4" Padding="2" Margin="40,10,0,10" Grid.RowSpan="13" Grid.ColumnSpan="1"  Width="Auto" HorizontalAlignment="Stretch"
                      MaxLength="0" VerticalScrollBarVisibility="Auto" IsReadOnly="True" />
             <TextBox Text="{Binding Properties.BestFitness, Mode=TwoWay}" Grid.Column="1" Grid.Row="0" Padding="3" Margin="0,4" Width="84" 
@@ -85,7 +77,7 @@
                 </ComboBoxItem>
             </ComboBox>
 
-            <Button IsEnabled="{Binding Properties.Availability}" Command="{Binding WorkGeneticAlgorithm}" Grid.Column="0" Grid.Row="7" Grid.ColumnSpan="1" Content="Начать работу алгоритма"    HorizontalAlignment="Center"   />
+            <Button IsEnabled="{Binding Properties.Availability}" Command="{Binding WorkGeneticAlgorithm}" Grid.Column="0" Grid.Row="5" Grid.ColumnSpan="1" Content="Начать работу алгоритма"    HorizontalAlignment="Center"   />
 
             <oxy:Plot Grid.Column="2" Grid.RowSpan="17" Margin="0,0,25,0"  >
                 <oxy:Plot.Series>

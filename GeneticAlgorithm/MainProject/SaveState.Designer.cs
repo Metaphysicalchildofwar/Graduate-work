@@ -26,30 +26,6 @@ namespace MainProject {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string CrossoverRate {
-            get {
-                return ((string)(this["CrossoverRate"]));
-            }
-            set {
-                this["CrossoverRate"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string MutationRate {
-            get {
-                return ((string)(this["MutationRate"]));
-            }
-            set {
-                this["MutationRate"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
         public string PopulationSize {
             get {
                 return ((string)(this["PopulationSize"]));

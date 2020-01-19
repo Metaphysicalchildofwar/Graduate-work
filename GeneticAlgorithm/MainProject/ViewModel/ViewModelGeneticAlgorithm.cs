@@ -21,8 +21,6 @@ namespace MainProject.ViewModel
         public ViewModelGeneticAlgorithm()
         {
             Properties.PopulationSize = SaveState.Default.PopulationSize;
-            Properties.MutationRate = SaveState.Default.MutationRate;
-            Properties.CrossoverRate = SaveState.Default.CrossoverRate;
             Properties.GenerationSize = SaveState.Default.GenerationSize;
             Properties.Availability = true;
 
@@ -30,8 +28,6 @@ namespace MainProject.ViewModel
         ~ViewModelGeneticAlgorithm()
         {
             SaveState.Default.PopulationSize = Properties.PopulationSize;
-            SaveState.Default.MutationRate = Properties.MutationRate;
-            SaveState.Default.CrossoverRate = Properties.CrossoverRate;
             SaveState.Default.GenerationSize = Properties.GenerationSize;
             SaveState.Default.Save();
         }
@@ -59,22 +55,14 @@ namespace MainProject.ViewModel
                 double doubleRes;
                 int intRes;
                 function = new ChoiseFunction();
-                if (!(double.TryParse(Properties.CrossoverRate.Replace(
-                                    (CultureInfo.InvariantCulture.NumberFormat.NumberDecimalSeparator == ",") ? "," : ".",
-                                    (CultureInfo.InvariantCulture.NumberFormat.NumberDecimalSeparator == ",") ? "." : ",")
-                                    , out doubleRes)) || 
-                   !(double.TryParse(Properties.MutationRate.Replace(
-                                    (CultureInfo.InvariantCulture.NumberFormat.NumberDecimalSeparator == ",") ? "," : ".",
-                                    (CultureInfo.InvariantCulture.NumberFormat.NumberDecimalSeparator == ",") ? "." : ","), out doubleRes)) ||
-                   !(int.TryParse(Properties.PopulationSize, out intRes)) || !(int.TryParse(Properties.GenerationSize, out intRes)))
+                if (!(int.TryParse(Properties.PopulationSize, out intRes)) || !(int.TryParse(Properties.GenerationSize, out intRes)))
                 {
                     MessageBox.Show("Данные введены некорректно.\nПроверьте правильность заполнения");
                     Properties.Availability = true;
                 }
                 else
                 {
-                    ga = new Genetic_Algorithm(Double.Parse(Properties.CrossoverRate, CultureInfo.InvariantCulture), Double.Parse(Properties.MutationRate, CultureInfo.InvariantCulture),
-                                                  Int32.Parse(Properties.PopulationSize), Int32.Parse(Properties.GenerationSize));
+                    ga = new Genetic_Algorithm(Int32.Parse(Properties.PopulationSize), Int32.Parse(Properties.GenerationSize));
 
                     //отчистка полей для вывода результатов
                     Properties.BestFitness = string.Empty;

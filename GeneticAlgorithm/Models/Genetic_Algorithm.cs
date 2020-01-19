@@ -14,16 +14,19 @@ namespace GeneticAlgorithm.Models
     public class Genetic_Algorithm
     {
         public event Message Notify;
+
         const int _genomeSize = 2;
+        const double _mutationRate = 0.08;
+        const double _crossoverRate = 0.8;
 
         /// <summary>
         /// Конструктор для инициализации
         /// </summary>
-        public Genetic_Algorithm(double crossoverRate, double mutationRate, int populationSize, int generationSize)
+        public Genetic_Algorithm(int populationSize, int generationSize)
         {
             InitialValues();
-            CrossoverRate = crossoverRate;
-            MutationRate = mutationRate;
+            CrossoverRate = _crossoverRate;
+            MutationRate = _mutationRate;
             PopulationSize = populationSize;
             GenerationSize = generationSize;
             GenomeSize = _genomeSize;
