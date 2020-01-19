@@ -1,13 +1,17 @@
 ﻿using GeneticAlgorithm.Models;
 using MainProject.Commands;
+using MainProject.WorkModels;
+using OxyPlot;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Input;
 
 namespace MainProject.ViewModel
 {
@@ -20,6 +24,7 @@ namespace MainProject.ViewModel
             Properties.MutationRate = SaveState.Default.MutationRate;
             Properties.CrossoverRate = SaveState.Default.CrossoverRate;
             Properties.GenerationSize = SaveState.Default.GenerationSize;
+            Properties.Availability = true;
 
         }
         ~ViewModelGeneticAlgorithm()
@@ -37,15 +42,23 @@ namespace MainProject.ViewModel
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(v));
         }
         Command _work;
+        
+        ChoiseFunction function;
         public static PropertyModel.Properties Properties { get; set; } = new PropertyModel.Properties();
+
         Genetic_Algorithm ga;
-        double f;
-        int numberFunct;
+        internal static int numberFunct;
         public Command WorkGeneticAlgorithm => _work ??
             (_work = new Command(async obj =>
             {
+                if (Properties.Availability == true)
+                {
+                    Properties.Availability = false;
+                }
+
                 double doubleRes;
                 int intRes;
+                function = new ChoiseFunction();
                 if (!(double.TryParse(Properties.CrossoverRate.Replace(
                                     (CultureInfo.InvariantCulture.NumberFormat.NumberDecimalSeparator == ",") ? "," : ".",
                                     (CultureInfo.InvariantCulture.NumberFormat.NumberDecimalSeparator == ",") ? "." : ",")
@@ -56,6 +69,7 @@ namespace MainProject.ViewModel
                    !(int.TryParse(Properties.PopulationSize, out intRes)) || !(int.TryParse(Properties.GenerationSize, out intRes)))
                 {
                     MessageBox.Show("Данные введены некорректно.\nПроверьте правильность заполнения");
+                    Properties.Availability = true;
                 }
                 else
                 {
@@ -69,45 +83,51 @@ namespace MainProject.ViewModel
                     Properties.IntermediateValues = string.Empty;
 
                     var Item = Properties.TheActualFunction;
-
+                    Properties.Points = new ObservableCollection<DataPoint>();
                     ga.Notify += ((a) => Properties.IntermediateValues += a + '\n');
 
+                    //выбор функции из ComboBox
                     switch (Item)
                     {
                         case 0:
                             numberFunct = 0;
-                            ga.FitnessFunction = new GAFunction(TheActualFunction); 
                             break;
                         case 1:
-                            numberFunct = 1;
-                            ga.FitnessFunction = new GAFunction(TheActualFunction);   
+                            numberFunct = 1;                        
+                            break;
+                        case 2:
+                            numberFunct = 2;
+                            break;
+                        case 3:
+                            numberFunct = 3;
                             break;
                     }
 
+                    //работа алгоритма
+                    ga.FitnessFunction = new GAFunction(function.TheActualFunction);
                     ga.Elitism = true;
-                        await Task.Run(() => ga.WorkGeneticAlgorithm());
-                        double[] values;
-                        double fitness;
+                    await Task.Run(() => ga.WorkGeneticAlgorithm());
 
-                        ga.GetBest(out values, out fitness);
+                    //получить первое и последнее значение для отображения промежутка на оси ОУ
+                    Properties.FirstValue = ga.Datas.First().Y;
+                    Properties.LastValue = Math.Round(ga.Datas.Last().Y);
 
-                        Properties.BestFitness += fitness.ToString();
-                        Properties.BestX += values[0].ToString();
-                        Properties.BestY += values[1].ToString();
-                    }
+                    //получить точки для чертежа
+                    Properties.Points = ga.Datas;
+
+                    double[] values;
+                    double fitness;
+
+                    ga.GetBest(out values, out fitness);
+
+                    Properties.BestFitness += fitness.ToString();
+                    Properties.BestX += values[0].ToString();
+                    Properties.BestY += values[1].ToString();
+
+                    Properties.Availability = true;
                 }
-            ));
-        public double TheActualFunction(double[] values)
-        {
-            double x = values[0];
-            double y = values[1];
+            }));
             
-            switch (numberFunct)
-            {
-                case 0: f = Math.Pow(15 * x * y * (1 - x) * (1 - y) * Math.Sin(9 * Math.PI * x) * Math.Sin(9 * Math.PI * y), 2); break;
-                case 1: f = -(Math.Pow(x, 2) + Math.Pow(y, 2) - 4); break;
-            }
-            return f;
-        }
+
     }
 }

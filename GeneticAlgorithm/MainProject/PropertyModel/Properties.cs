@@ -1,5 +1,7 @@
-﻿using System;
+﻿using OxyPlot;
+using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
 using System.Text;
@@ -31,6 +33,77 @@ namespace MainProject.PropertyModel
         private string _intermediateValues;
 
         private int _theActualFunction;
+
+        private ObservableCollection<DataPoint> _points;
+
+        private bool _availability;
+
+        private double _firstValue;
+        private double _lastValue;
+
+        /// <summary>
+        /// Первое значение для оси ординат
+        /// </summary>
+        public double FirstValue
+        {
+            get => _firstValue;
+            set
+            {
+                if (_firstValue != value)
+                {
+                    _firstValue = value;
+                    InvokePropertyChanged(nameof(FirstValue));
+                }
+            }
+        }
+
+        /// <summary>
+        /// Последнее значение для оси ординат
+        /// </summary>
+        public double LastValue
+        {
+            get => _lastValue;
+            set
+            {
+                if (_lastValue != value)
+                {
+                    _lastValue = value;
+                    InvokePropertyChanged(nameof(LastValue));
+                }
+            }
+        }
+
+        /// <summary>
+        /// Доступность кнопки начала работы
+        /// </summary>
+        public bool Availability
+        {
+            get => _availability;
+            set
+            {
+                if (_availability != value)
+                {
+                    _availability = value;
+                    InvokePropertyChanged(nameof(Availability));
+                }
+            }
+        }
+
+        /// <summary>
+        /// Рисование графика
+        /// </summary>
+        public ObservableCollection<DataPoint> Points
+        {
+            get => _points;
+            set
+            {
+                if (_points != value)
+                {
+                    _points = value;
+                    InvokePropertyChanged(nameof(Points));
+                }
+            }
+        }
 
         /// <summary>
         /// Номер функции для исследования

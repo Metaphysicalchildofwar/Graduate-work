@@ -31,6 +31,7 @@ namespace MainProject.Commands
 
         public void Execute(object parameter)
         {
+            canExecute = null;
             this.execute(parameter);
         }
     }

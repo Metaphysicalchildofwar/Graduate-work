@@ -70,7 +70,7 @@ namespace GeneticAlgorithm.Models
         {
             for (var l = 0; l < Length; l++)
             {
-                Genes[l] = Rand.NextDouble();
+                Genes[l] = -5 + (5 - (-5)) * Rand.NextDouble();
             }
         }
 
@@ -116,7 +116,7 @@ namespace GeneticAlgorithm.Models
             {
                 if (Rand.NextDouble() < MutationRate)
                 {
-                    Genes[l] = (Genes[l] + Rand.NextDouble()) / 2.0;
+                    Genes[l] = (Genes[l] + (-5 + (5 - (-5)) * Rand.NextDouble())) / 2.0;
                 }
             }
         }

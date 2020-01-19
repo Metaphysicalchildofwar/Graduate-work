@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MainProject"
+        xmlns:oxy="http://oxyplot.org/wpf"
         mc:Ignorable="d"
         Title="Генетический алгоритм" Height="600" Width="1000" 
         WindowStartupLocation="CenterScreen"
@@ -14,11 +15,11 @@
     <Border BorderThickness="0" >
         <Grid Margin="1,18,-18,-8">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="435*" />
-                <ColumnDefinition Width="169*" />
-                <ColumnDefinition Width="135*" />
-                <ColumnDefinition Width="177*"/>
-                <ColumnDefinition Width="95*" />
+                <ColumnDefinition Width="290*" />
+                <ColumnDefinition Width="284*" />
+                <ColumnDefinition Width="437*" />
+
+
             </Grid.ColumnDefinitions>
 
             <Grid.RowDefinitions>
@@ -41,44 +42,66 @@
                 <RowDefinition Height="31" />
             </Grid.RowDefinitions>
 
-            <Label Grid.Column="3" Grid.Row="0" Content="Частота крещиваний:" Margin="0,4,0,0" Width="128"/>
-            <Label Grid.Column="3" Grid.Row="1" Content="Частота мутаций:" Margin="0,4,0,0" Width="105"/>
-            <Label Grid.Column="3" Grid.Row="2" Content="Размер популяции:" Margin="0,4,0,0" Width="116"/>
-            <Label Grid.Column="3" Grid.Row="3" Content="Размер поколения:" Margin="0,5,0,0" Width="115"/>
-            <Label Grid.Column="3" Grid.Row="5" Content="Значения приспособленности:" HorizontalAlignment="Left"
-                   HorizontalContentAlignment="Left" Margin="0,13,0,19" Grid.RowSpan="2" Grid.ColumnSpan="2" Width="179" />
-            <Label Grid.Row="12" Grid.Column="1" Content="Максимальное значение:" HorizontalAlignment="Right" Width="150" />
-            <Label Grid.Row="13" Grid.Column="1" Content="Координата х:" HorizontalAlignment="Right" Width="87" />
-            <Label Grid.Row="14" Grid.Column="1" Content="Координата y:" HorizontalAlignment="Right" Width="87" />
-            <Label Grid.Column="1" Grid.Row="0" Grid.ColumnSpan="2" Content="Выберите функцию для исследования:" Margin="0,4,30,0" Width="223"/>
+            <Label Grid.Column="0" Grid.Row="2" HorizontalAlignment="Center" Content="Частота крещиваний:" Margin="88,4,74,0" Width="128"/>
+            <Label Grid.Column="0" Grid.Row="3" HorizontalAlignment="Center" Content="Частота мутаций:" Margin="112,4,74,0" Width="104"/>
+            <Label Grid.Column="0" Grid.Row="4" HorizontalAlignment="Center" Content="Размер популяции:" Margin="100,4,74,0" Width="116"/>
+            <Label Grid.Column="0" Grid.Row="5" HorizontalAlignment="Center" Content="Размер поколения:" Margin="102,5,74,0" Width="114"/>
+            <Label Grid.Column="1" Grid.Row="3" Content="Значения приспособленности:" HorizontalAlignment="Center"
+                   HorizontalContentAlignment="Left" Margin="50,10,54,22" Grid.RowSpan="2" Width="180" />
+            <Label Grid.Row="0" Grid.Column="1" Content="Максимальное значение:" Width="150" Margin="0,0,102,0" />
+            <Label Grid.Row="1" Grid.Column="1" Content="Координата х:" HorizontalAlignment="Right" Width="88" Margin="0,0,100,0" />
+            <Label Grid.Row="2" Grid.Column="1" Content="Координата y:" HorizontalAlignment="Center" Width="88" Margin="96,0,100,0" />
+            <Label Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="1" Content="Выберите функцию для исследования:" Margin="0,4,30,0" Width="223"/>
 
 
 
-            <TextBox Text="{Binding Properties.CrossoverRate}"  Grid.Column="4" Grid.Row="0" Padding="3" Margin="4,4,0,4" Width="61" />
-            <TextBox Text="{Binding Properties.MutationRate}" Grid.Column="4" Grid.Row="1" Padding="3" Margin="4,4,0,4" />
-            <TextBox Text="{Binding Properties.PopulationSize}" Grid.Column="4" Grid.Row="2" Padding="3" Margin="4,4,0,4" Width="61" />
-            <TextBox Text="{Binding Properties.GenerationSize}" Grid.Column="4" Grid.Row="3" Padding="3" Margin="4,4,0,4" Width="61" />
-            <TextBox Text="{Binding Properties.IntermediateValues,  Mode=TwoWay}" Grid.Column="3" Grid.Row="6" Padding="2" Margin="0,10,30,-3" 
-                     Grid.ColumnSpan="2" Grid.RowSpan="11"  Width="Auto" HorizontalAlignment="Stretch"
+            <TextBox Text="{Binding Properties.CrossoverRate}" HorizontalAlignment="Right" Grid.Column="0" Grid.Row="2" Padding="3" Margin="0,4" Width="61" />
+            <TextBox Text="{Binding Properties.MutationRate}" HorizontalAlignment="Right" Grid.Column="0" Grid.Row="3" Padding="3" Margin="0,4" />
+            <TextBox Text="{Binding Properties.PopulationSize}" HorizontalAlignment="Right" Grid.Column="0" Grid.Row="4" Padding="3" Margin="0,4" Width="61" />
+            <TextBox Text="{Binding Properties.GenerationSize}" HorizontalAlignment="Right" Grid.Column="0" Grid.Row="5" Padding="3" Margin="0,4" Width="61" />
+            <TextBox Text="{Binding Properties.IntermediateValues,  Mode=TwoWay}" Grid.Column="1" Grid.Row="4" Padding="2" Margin="40,10,0,10" Grid.RowSpan="13" Grid.ColumnSpan="1"  Width="Auto" HorizontalAlignment="Stretch"
                      MaxLength="0" VerticalScrollBarVisibility="Auto" IsReadOnly="True" />
-            <TextBox Text="{Binding Properties.BestFitness, Mode=TwoWay}" Grid.Column="2" Grid.Row="12" Padding="3" Margin="16,4,0,4" Width="84" 
-                     HorizontalAlignment="Left" MaxLength="0" IsReadOnly="True" />
-            <TextBox Text="{Binding Properties.BestX,  Mode=TwoWay}" Grid.Column="2" Grid.Row="13" Padding="3" Margin="16,4,0,4" Width="84"
-                     HorizontalAlignment="Left" MaxLength="0" IsReadOnly="True" />
-            <TextBox Text="{Binding Properties.BestY,  Mode=TwoWay}" Grid.Column="2" Grid.Row="14" Padding="3" Margin="16,4,0,4" Width="84" 
-                     HorizontalAlignment="Left" MaxLength="0" IsReadOnly="True" />
+            <TextBox Text="{Binding Properties.BestFitness, Mode=TwoWay}" Grid.Column="1" Grid.Row="0" Padding="3" Margin="0,4" Width="84" 
+                     HorizontalAlignment="Right" MaxLength="0" IsReadOnly="True" />
+            <TextBox Text="{Binding Properties.BestX,  Mode=TwoWay}" Grid.Column="1" Grid.Row="1" Padding="3" Margin="0,4" Width="84"
+                     HorizontalAlignment="Right" MaxLength="0" IsReadOnly="True" />
+            <TextBox Text="{Binding Properties.BestY,  Mode=TwoWay}" Grid.Column="1" Grid.Row="2" Padding="3" Margin="0,4" Width="84" 
+                     HorizontalAlignment="Right" MaxLength="0" IsReadOnly="True" />
 
-            <Line X1="430" Y1="0" X2="430" Y2="600" Stroke="#e3e4e8" StrokeThickness="1"  Grid.RowSpan="17" />
+            <Line X1="300" Y1="0" X2="300" Y2="600" Stroke="#e3e4e8" Grid.ColumnSpan="5" StrokeThickness="1"  Grid.RowSpan="17" />
 
-            <ComboBox SelectedIndex="{Binding Properties.TheActualFunction}" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="2" Margin="39,4,33,4" HorizontalAlignment="Center" Width="229" Style="{DynamicResource ComboBoxStyle}">
-                <ComboBoxItem Content="0" />
-                <ComboBoxItem Content="1" />
+            <ComboBox SelectedIndex="{Binding Properties.TheActualFunction}" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="1" Style="{DynamicResource ComboBoxStyle}" HorizontalAlignment="Right" Width="280" Margin="0,4">
+                <ComboBoxItem>
+                    <Image Source="C:\Users\ewe98\OneDrive\Рабочий стол\Дипломная работа\Genetic Algorithm\Graduate-work\GeneticAlgorithm\MainProject\Images\ComboBoxImages\0.gif" />
+                </ComboBoxItem>
+                <ComboBoxItem>
+                    <Image Source="C:\Users\ewe98\OneDrive\Рабочий стол\Дипломная работа\Genetic Algorithm\Graduate-work\GeneticAlgorithm\MainProject\Images\ComboBoxImages\1.gif" />
+                </ComboBoxItem>
+                <ComboBoxItem>
+                    <Image Source="C:\Users\ewe98\OneDrive\Рабочий стол\Дипломная работа\Genetic Algorithm\Graduate-work\GeneticAlgorithm\MainProject\Images\ComboBoxImages\2.gif" />
+                </ComboBoxItem>
+                <ComboBoxItem>
+                    <Image Source="C:\Users\ewe98\OneDrive\Рабочий стол\Дипломная работа\Genetic Algorithm\Graduate-work\GeneticAlgorithm\MainProject\Images\ComboBoxImages\3.gif" />
+                </ComboBoxItem>
             </ComboBox>
 
-            <Button Command="{Binding WorkGeneticAlgorithm}" Grid.Column="1" Grid.Row="16" Grid.ColumnSpan="2" Content="Начать работу алгоритма" Height="Auto" Margin="62,4" Width="Auto" />
+            <Button IsEnabled="{Binding Properties.Availability}" Command="{Binding WorkGeneticAlgorithm}" Grid.Column="0" Grid.Row="7" Grid.ColumnSpan="1" Content="Начать работу алгоритма"    HorizontalAlignment="Center"   />
+
+            <oxy:Plot Grid.Column="2" Grid.RowSpan="17" Margin="0,0,25,0"  >
+                <oxy:Plot.Series>
+                    <oxy:LineSeries  ItemsSource = "{Binding Properties.Points}" />
+                </oxy:Plot.Series>
+                <oxy:Plot.Axes>
+                    <oxy:LinearAxis Position="Bottom" Minimum="-10" Maximum="{Binding Properties.GenerationSize}" />
+                    <oxy:LinearAxis Position="Left" Minimum="{Binding Properties.FirstValue}" Maximum="{Binding Properties.LastValue}" />
+                </oxy:Plot.Axes>
+            </oxy:Plot>
         </Grid>
     </Border>
     <Window.Resources>
+        <Style TargetType="oxy:Plot">
+            <Setter Property="Background" Value="#f6f7fb" />
+        </Style>
         <Style TargetType="Label" >
             <Style.Setters>
                 <Setter Property="FontSize" Value="12" />

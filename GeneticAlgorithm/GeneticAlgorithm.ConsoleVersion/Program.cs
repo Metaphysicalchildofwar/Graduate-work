@@ -28,7 +28,7 @@ namespace GeneticAlgorithm.ConsoleVersion
 
             Console.Read();
         }
-        public static double theActualFunction(double[] values)
+        public static double theActualFunction(double[] values, int n)
         {
 
             double x = values[0];

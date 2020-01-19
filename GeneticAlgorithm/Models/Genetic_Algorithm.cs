@@ -1,14 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Collections.ObjectModel;
+using OxyPlot;
 
 namespace GeneticAlgorithm.Models
 {
     public delegate double GAFunction(double[] values);
     public delegate void Message(string message);
-    
+
     /// <summary>
 	/// Главный класс генетического алгоритма
 	/// </summary>
@@ -16,6 +15,7 @@ namespace GeneticAlgorithm.Models
     {
         public event Message Notify;
         const int _genomeSize = 2;
+
         /// <summary>
         /// Конструктор для инициализации
         /// </summary>
@@ -33,7 +33,7 @@ namespace GeneticAlgorithm.Models
         /// <summary>
         /// Размер популяции
         /// </summary>
-        public int PopulationSize { get; set; }
+        private int PopulationSize { get; set; }
 
         /// <summary>
         /// Количество поколений
@@ -102,7 +102,7 @@ namespace GeneticAlgorithm.Models
         /// <summary>
         /// Величина поколения
         /// </summary>
-        private int GenerationSize { get; set; }
+        public int GenerationSize { get; set; }
 
         /// <summary>
 		/// Создаем геномы и заполняем их генами
@@ -232,15 +232,19 @@ namespace GeneticAlgorithm.Models
 
             CreateGenomes();
             RankPopulation();
-
+            Datas = new ObservableCollection<DataPoint>();
             //будет редачиться
             for (var g = 0; g < GenerationSize; g++)
             {
                 CreateNextGeneration();
                 RankPopulation();
                 Notify?.Invoke($"{(ThisGeneration[PopulationSize - 1].Fitness)}     {g+1}");
+
+                Datas.Add(new DataPoint(g + 1, (ThisGeneration[PopulationSize - 1].Fitness)));
             }
         }
+
+        public ObservableCollection<DataPoint> Datas { get; set; }
 
         /// <summary>
         /// Получить лучшее значение (для вывода)
