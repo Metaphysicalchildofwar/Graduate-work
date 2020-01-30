@@ -49,7 +49,7 @@ namespace Models {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("0.08")]
+        [global::System.Configuration.DefaultSettingValueAttribute("1")]
         public double MutationRate {
             get {
                 return ((double)(this["MutationRate"]));
@@ -61,7 +61,7 @@ namespace Models {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("0.8")]
+        [global::System.Configuration.DefaultSettingValueAttribute("1")]
         public double CrossoverRate {
             get {
                 return ((double)(this["CrossoverRate"]));

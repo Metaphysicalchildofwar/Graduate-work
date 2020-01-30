@@ -36,6 +36,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>TextTemplate.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
@@ -73,9 +76,9 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Commands\Command.cs" />
-    <Compile Include="PropertyModel\Properties.cs" />
+    <Compile Include="Models\PropertyModel\Properties.cs" />
     <Compile Include="ViewModel\ViewModelGeneticAlgorithm.cs" />
-    <Compile Include="WorkModels\ChoiseFunction.cs" />
+    <Compile Include="Models\WorkModels\ChoiseFunction.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -117,9 +120,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\Content\cpu.png" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\Models\Models.csproj">
       <Project>{8159933A-DDBA-43A2-A3E1-5A830B6C70FD}</Project>
       <Name>Models</Name>
@@ -134,6 +134,12 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\ComboBoxImages\3.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="TextTemplate.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Content\crown.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

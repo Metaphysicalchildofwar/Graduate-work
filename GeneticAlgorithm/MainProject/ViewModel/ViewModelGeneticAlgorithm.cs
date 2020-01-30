@@ -69,7 +69,6 @@ namespace MainProject.ViewModel
                     Properties.BestX = string.Empty;
                     Properties.BestY = string.Empty;
                     Properties.IntermediateValues = string.Empty;
-
                     var Item = Properties.TheActualFunction;
                     Properties.Points = new ObservableCollection<DataPoint>();
                     ga.Notify += ((a) => Properties.IntermediateValues += a + '\n');

@@ -9,10 +9,10 @@
       <Value Profile="(Default)" />
     </Setting>
     <Setting Name="MutationRate" Type="System.Double" Scope="User">
-      <Value Profile="(Default)">0.08</Value>
+      <Value Profile="(Default)">1</Value>
     </Setting>
     <Setting Name="CrossoverRate" Type="System.Double" Scope="User">
-      <Value Profile="(Default)">0.8</Value>
+      <Value Profile="(Default)">1</Value>
     </Setting>
     <Setting Name="GenomeSize" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">2</Value>

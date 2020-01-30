@@ -6,10 +6,10 @@
         xmlns:local="clr-namespace:MainProject"
         xmlns:oxy="http://oxyplot.org/wpf"
         mc:Ignorable="d"
-        Title="Генетический алгоритм" Height="600" Width="1000" 
+        Title="Генетический алгоритм оптимизации функции" Height="600" Width="1000" 
         WindowStartupLocation="CenterScreen"
         Background="#f6f7fb"
-        Icon="Images\Content\cpu.png"
+        Icon="Images\Content\crown.ico"
         ResizeMode="NoResize" >
 
     <Border BorderThickness="0" >
@@ -64,16 +64,16 @@
 
             <ComboBox SelectedIndex="{Binding Properties.TheActualFunction}" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="1" Style="{DynamicResource ComboBoxStyle}" HorizontalAlignment="Right" Width="280" Margin="0,4">
                 <ComboBoxItem>
-                    <Image Source="C:\Users\ewe98\OneDrive\Рабочий стол\Дипломная работа\Genetic Algorithm\Graduate-work\GeneticAlgorithm\MainProject\Images\ComboBoxImages\0.gif" />
+                    <Image Source="Images\ComboBoxImages\0.gif" />
                 </ComboBoxItem>
                 <ComboBoxItem>
-                    <Image Source="C:\Users\ewe98\OneDrive\Рабочий стол\Дипломная работа\Genetic Algorithm\Graduate-work\GeneticAlgorithm\MainProject\Images\ComboBoxImages\1.gif" />
+                    <Image Source="Images\ComboBoxImages\1.gif" />
                 </ComboBoxItem>
                 <ComboBoxItem>
-                    <Image Source="C:\Users\ewe98\OneDrive\Рабочий стол\Дипломная работа\Genetic Algorithm\Graduate-work\GeneticAlgorithm\MainProject\Images\ComboBoxImages\2.gif" />
+                    <Image Source="Images\ComboBoxImages\2.gif" />
                 </ComboBoxItem>
                 <ComboBoxItem>
-                    <Image Source="C:\Users\ewe98\OneDrive\Рабочий стол\Дипломная работа\Genetic Algorithm\Graduate-work\GeneticAlgorithm\MainProject\Images\ComboBoxImages\3.gif" />
+                    <Image Source="Images\ComboBoxImages\3.gif" />
                 </ComboBoxItem>
             </ComboBox>
 

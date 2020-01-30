@@ -8,6 +8,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/comboboximages/3.gif")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/content/crown.ico")]
 
 
