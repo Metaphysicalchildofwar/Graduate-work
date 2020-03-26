@@ -9,3 +9,14 @@ C:\Users\ewe98\OneDrive\Рабочий стол\Дипломная работа\
 C:\Users\ewe98\OneDrive\Рабочий стол\Дипломная работа\Genetic Algorithm\Graduate-work\GeneticAlgorithm\Models\bin\Debug\OxyPlot.Wpf.xml
 C:\Users\ewe98\OneDrive\Рабочий стол\Дипломная работа\Genetic Algorithm\Graduate-work\GeneticAlgorithm\Models\obj\Debug\Models.csproj.CopyComplete
 C:\Users\ewe98\OneDrive\Рабочий стол\Дипломная работа\Genetic Algorithm\Graduate-work\GeneticAlgorithm\Models\bin\Debug\Models.dll.config
+E:\Рабочий стол Папка\Дипломная работа\Genetic Algorithm\Graduate-work\GeneticAlgorithm\Models\bin\Debug\Models.dll.config
+E:\Рабочий стол Папка\Дипломная работа\Genetic Algorithm\Graduate-work\GeneticAlgorithm\Models\bin\Debug\Models.dll
+E:\Рабочий стол Папка\Дипломная работа\Genetic Algorithm\Graduate-work\GeneticAlgorithm\Models\bin\Debug\Models.pdb
+E:\Рабочий стол Папка\Дипломная работа\Genetic Algorithm\Graduate-work\GeneticAlgorithm\Models\bin\Debug\OxyPlot.dll
+E:\Рабочий стол Папка\Дипломная работа\Genetic Algorithm\Graduate-work\GeneticAlgorithm\Models\bin\Debug\OxyPlot.Wpf.dll
+E:\Рабочий стол Папка\Дипломная работа\Genetic Algorithm\Graduate-work\GeneticAlgorithm\Models\bin\Debug\OxyPlot.xml
+E:\Рабочий стол Папка\Дипломная работа\Genetic Algorithm\Graduate-work\GeneticAlgorithm\Models\bin\Debug\OxyPlot.Wpf.xml
+E:\Рабочий стол Папка\Дипломная работа\Genetic Algorithm\Graduate-work\GeneticAlgorithm\Models\obj\Debug\Models.csprojAssemblyReference.cache
+E:\Рабочий стол Папка\Дипломная работа\Genetic Algorithm\Graduate-work\GeneticAlgorithm\Models\obj\Debug\Models.csproj.CopyComplete
+E:\Рабочий стол Папка\Дипломная работа\Genetic Algorithm\Graduate-work\GeneticAlgorithm\Models\obj\Debug\Models.dll
+E:\Рабочий стол Папка\Дипломная работа\Genetic Algorithm\Graduate-work\GeneticAlgorithm\Models\obj\Debug\Models.pdb
